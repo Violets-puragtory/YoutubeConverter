@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <!-- <script src="./main.js"></script> -->
+
+    <title>Youtube Downloader</title>
+</head>
+
+<body>
+    <h1>Youtube Downloader</h1>
+    <form action="download" method="get" target="_blank">
+        <input id="url" placeholder="Enter url" name="url">
+        <label for="quality">Quality</label>
+        <select id="quality" name="quality">
+            <option value="highest">Select Quality</option>
+            <option value="highest">highest</option>
+            <option value="lowest">lowest</option>
+            <option value="highestaudio">highestaudio</option>
+            <option value="lowestaudio">lowestaudio</option>
+            <option value="highestvideo">highestvideo</option>
+            <option value="lowestvideo">lowestvideo</option>
+        </select>
+        <label for="filename">SaveAs</label>
+        <input id="filename" placeholder="Enter filename">
+        <label for="format">Format</label>
+        <select id="format" name="format">
+            <option value="format">Select Format</option>
+            <option value="mp4">mp4</option>
+            <option value="wmv">wmv</option>
+            <option value="flv">flv</option>
+            <option value="avi">avi</option>
+            <option value="mp3">mp3</option>
+            <option value="mpg">mpg</option>
+        </select>
+        <input type="submit" placeholder="test">
+    </form>
+</body>
+
+</html>
