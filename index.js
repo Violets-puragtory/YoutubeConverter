@@ -7,14 +7,17 @@ const PORT = process.env.PORT || 8080
 const app = express()
 
 app.get("/download", (req, res) => {
-  res.header('Content-Type', 'video');
-
-  const url = req.query.url;
+  const filename = req.query.filename
+  const url = req.query.url
   const format= req.query.format
   const quality = req.query.quality
-  console.log(req.query.url)
-  res.header('Content-Disposition', `attachment; filename="test.${format}"`);
-  ytdl(url, {'format': format, 'quality': quality}).pipe(res);
+  
+  if ((filename === 'string' && url === 'string' && format === 'string' && quality === 'string')) {
+    res.header('Content-Disposition', `attachment; filename="${filename}.${format}"`);
+    ytdl(url, {'format': format, 'quality': quality}).pipe(res);
+  } else {
+    res.send('Please input proper values in all fields.')
+  }
 
 });
 
