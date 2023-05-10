@@ -1,5 +1,6 @@
 :root {
-    --text-color: rgb(230, 210,  255);
+    --primary-color: rgb(230, 210, 255);
+    --text-color: white;
     --background-color: rgb(50, 35, 75);
     --second-bg-color: black;
 }
@@ -10,7 +11,14 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p, select, input {
+h1,
+h1>* {
+    color: var(--primary-color)
+}
+
+p,
+select,
+input {
     font-size: 1.4rem;
 }
 
@@ -18,28 +26,35 @@ p {
     margin: 5px;
 }
 
-body, html {
+body,
+html {
     background-color: var(--background-color);
 }
 
 .grid-container {
     width: 100%;
-    margin:  auto;
+    margin: auto;
 }
 
-/* .grid-container > *:not(select, input) {
-    float: left;
-} */
-
-select, input{
+select,
+input {
     display: inline-grid;
     background-color: var(--second-bg-color);
-    color: var(--text-color);
+    color: var(--primary-color);
     margin: 5px auto;
-    border: 2px var(--text-color) solid;
+    border: 2px var(--primary-color) solid;
     border-radius: 5px;
-    /* width: 70%; */
     padding: 5px;
+}
+
+.col-sm-3 {
+    outline: white solid 2px
+}
+
+select:hover,
+input:hover {
+    color: var(--text-color);
+    border-color: var(--text-color)
 }
 
 label {
